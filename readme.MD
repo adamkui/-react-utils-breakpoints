@@ -1,10 +1,9 @@
 # react-breakpoint-utils
 
-The react-breakpoint-utils library is aiming to help with declaring, and using breakpoints easily for responsive UI development in React.
+The react-breakpoint-utils library is aiming to help with declaring, and using breakpoints easily for responsive UI development in React.\
+&nbsp;
 
-## Components
-
-### BreakPointsProvider
+## BreakPointsProvider
 
 First, you will need BreakPointsProvider, to declare the breakpoints for your application.
 Super easy to use, just wrap your application with this component, passing the breakpoints as shown below. It is a good idea to do this on the highest possible level you can, i.e. your index or App file.
@@ -66,7 +65,10 @@ root.render(
 );
 ```
 
-### MatchMedia
+\
+&nbsp;
+
+## MatchMedia
 
 MatchMedia is a super simple to use component, designed to easily hide or display your components. Props are optional, so you can provide either only one of the min/max breakpoints value. It is recommended to pass actual breakpoints, using the useBreakPoints hook, avoiding hard coded or duplicate breakpoint values in your code.
 
@@ -95,9 +97,10 @@ export const MyTestPage: FC = () => {
 };
 ```
 
-## Hooks
+\
+&nbsp;
 
-### useWindowSize()
+## useWindowSize()
 
 You can access a series of properties with the help of this hook, that you can use just as you like. This is recommended for more advanced / complex solutions compared to MatchMedia usage.
 
@@ -131,7 +134,10 @@ export const MyTestPage: FC = () => {
 };
 ```
 
-### useBreakPoints()
+\
+&nbsp;
+
+## useBreakPoints()
 
 You can access the globally declared breakpoint values, in case you need them. A common use case for this hook, is being combined with the MatchMedia component.
 
