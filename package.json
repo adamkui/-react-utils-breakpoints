@@ -1,6 +1,27 @@
 {
-  "name": "@react-utils/breakpoints",
+  "name": "react-breakpoint-utils",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamkui/react-breakpoint-utils"
+  },
+  "keywords": [
+    "react",
+    "reactJS",
+    "window",
+    "size",
+    "hook",
+    "hooks",
+    "react hooks",
+    "window size hook",
+    "window width",
+    "window width hook",
+    "window breakpoints",
+    "react window breakpoints",
+    "breakpoint utils",
+    "react utils",
+    "utils"
+  ],
   "description": "TS library to help out with handling window sizes in React projects",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
