@@ -1,0 +1,33 @@
+{
+  "name": "@react-utils/breakpoints",
+  "version": "1.0.0",
+  "description": "TS library to help out with handling window sizes in React projects",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Adam Kui",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf /dist && yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.187",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.8.4"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
