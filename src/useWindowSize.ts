@@ -1,7 +1,7 @@
 import _ from "lodash";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-import { BreakPointsContext } from "./WindowContextProvider";
+import { useBreakPoints } from "./useBreakPoints";
 
 export interface WindowSizeParams {
   width?: number;
@@ -42,7 +42,7 @@ const defaultWindowSizeParams: WindowSizeParams = {
 };
 
 export const useWindowSize = (debounceWait = 150) => {
-  const breakPoints = useContext(BreakPointsContext);
+  const breakPoints = useBreakPoints();
 
   const [windowSize, setWindowSize] = useState<WindowSizeParams>(
     defaultWindowSizeParams

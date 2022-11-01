@@ -3,35 +3,25 @@ import { FC, ReactElement, useMemo } from "react";
 import { useWindowSize } from "./useWindowSize";
 
 interface MatchMediaProps {
-  minBreakPoint?: number;
-  maxBreakPoint?: number;
+  min?: number;
+  max?: number;
   children?: ReactElement<any, any>;
 }
 
-export const MatchMedia: FC<MatchMediaProps> = ({
-  minBreakPoint,
-  maxBreakPoint,
-  children,
-}) => {
+export const MatchMedia: FC<MatchMediaProps> = ({ min, max, children }) => {
   const { width } = useWindowSize();
 
   const renderChildren = () => {
     if (!width || !children) return null;
 
-    if (minBreakPoint && maxBreakPoint && minBreakPoint > maxBreakPoint)
+    if (min && max && min > max)
       throw new Error(
         "Invalid props: minBreakPoint has to be smaller than maxBreakPoint"
       );
 
-    const matchMinBreakPoint =
-      minBreakPoint && !maxBreakPoint && minBreakPoint <= width;
-    const matchMaxBreakPoint =
-      !minBreakPoint && maxBreakPoint && width <= maxBreakPoint;
-    const matchBothBreakPoints =
-      minBreakPoint &&
-      maxBreakPoint &&
-      minBreakPoint <= width &&
-      width <= maxBreakPoint;
+    const matchMinBreakPoint = min && !max && min <= width;
+    const matchMaxBreakPoint = !min && max && width <= max;
+    const matchBothBreakPoints = min && max && min <= width && width <= max;
 
     if (matchMinBreakPoint || matchMaxBreakPoint || matchBothBreakPoints) {
       return children;
