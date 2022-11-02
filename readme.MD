@@ -90,7 +90,7 @@ export const MyTestPage: FC = () => {
         <p>{"You can only see me above 640px"}</p>
       </MatchMedia>
       <MatchMedia max={SM}>
-        <p>{"You can only see me above 640px"}</p>
+        <p>{"You can only see me below 640px"}</p>
       </MatchMedia>
     </>
   );
