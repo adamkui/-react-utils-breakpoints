@@ -1,12 +1,18 @@
-import { FC, ReactElement, useMemo } from "react";
-
-import { useWindowSize } from "./useWindowSize";
+import { createContext, FC, ReactElement, useMemo } from "react";
+import { BreakPoints } from "./_breakpoints";
+import { useWindowSize } from "./_windowSize";
 
 interface MatchMediaProps {
   min?: number;
   max?: number;
   children?: ReactElement<any, any>;
 }
+
+export const BreakPointsContext = createContext<BreakPoints | undefined>(
+  undefined
+);
+
+export const BreakPointsProvider = BreakPointsContext.Provider;
 
 export const MatchMedia: FC<MatchMediaProps> = ({ min, max, children }) => {
   const { width } = useWindowSize();

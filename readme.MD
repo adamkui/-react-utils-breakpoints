@@ -153,3 +153,16 @@ export const MyTestPage: FC = () => {
   return null;
 };
 ```
+
+\
+&nbsp;
+
+## withWindowSize()
+
+There is also a HOC version for useWindowSize, you can use it together with the WithWindowSizeInjectedProps interface in TypeScript. It will provide the same values as the useWindowSize hook, but as props.
+\
+&nbsp;
+
+## withBreakPoints()
+
+There is also a HOC version for useBreakPoints, you can use it together with the WithBreakPointsInjectedProps interface in TypeScript. It will provide the same values as the useBreakPoints hook, but as props.

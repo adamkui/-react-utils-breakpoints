@@ -1,7 +1,7 @@
 import _ from "lodash";
+import { ComponentType } from "react";
 import { useEffect, useState } from "react";
-
-import { useBreakPoints } from "./useBreakPoints";
+import { useBreakPoints } from "./_breakpoints";
 
 export interface WindowSizeParams {
   width?: number;
@@ -20,6 +20,10 @@ export interface WindowSizeParams {
   underXl?: boolean;
   under2Xl?: boolean;
   under3Xl?: boolean;
+}
+
+export interface WithWindowSizeInjectedProps {
+  windowSize: WindowSizeParams;
 }
 
 const defaultWindowSizeParams: WindowSizeParams = {
@@ -82,3 +86,14 @@ export const useWindowSize = (debounceWait = 150) => {
 
   return { ...windowSize };
 };
+
+export function withWindowSize<T>(
+  Component: ComponentType<T>,
+  debounceWait = 150
+) {
+  return (hocProps: T) => {
+    const windowSize = useWindowSize(debounceWait);
+
+    return <Component {...hocProps} windowSize={windowSize} />;
+  };
+}
